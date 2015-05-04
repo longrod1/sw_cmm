@@ -25,11 +25,11 @@ function LoadTrait(){
 }
 
 function LoadIni(){
-  var mostrar = document.getElementById('selectModelo');
+  var listModel = document.getElementById('selectModelo');
   if(http){
     http.onreadystatechange = function(){
       if(http.readyState==4 && http.status==200){
-        mostrar.innerHTML=http.responseText;
+        listModel.innerHTML=http.responseText;
       }
     }
     http.open("GET","cgi-bin/loadIni.pl",true);
