@@ -9,6 +9,7 @@ $username='rcondori';
 $password='kzw8x6qr';
 $database='rcondori';
 $dsn = "DBI:mysql:database=$database;host=$hostname;port=$port";
+
 $dbh = DBI->connect($dsn,$username,$password) or die ("no se puede conectar");
 
 $sth = $dbh->prepare("CREATE TABLE IF NOT EXISTS Modelos( ModCod INT NOT NULL, ModNom varchar(30), PRIMARY KEY(ModCod))engine=innoDB");
@@ -24,12 +25,9 @@ $sth->execute();
 $sth = $dbh->prepare("SELECT ModCod,ModNom from Modelos");
 $sth->execute();
 
+print "<select class='form-control' id='selectModelo'>";
 while(@res = $sth->fetchrow_array()){
-print<<HTML;
-  <select class="form-control" id="selectModelo">
-  	<option value="@res[0]">@res[1]</option>
-  </select>
-HTML
+  print "<option value='@res[0]'>@res[1]</option>"
 }
-
+print "</select>";
 $dbh->disconnect();

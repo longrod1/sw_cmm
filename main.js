@@ -14,5 +14,5 @@ $(function () {
 });
 
 $(document).ready(function(){
-    $("#cargar").click(function(){LoadTrait();});   
+    $("#btn_cargar").click(function(){LoadTrait();});   
 });
