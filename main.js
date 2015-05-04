@@ -1,3 +1,4 @@
+
 $(function () {
   	$('.navbar-toggle-sidebar').click(function () {
   		$('.navbar-nav').toggleClass('slide-in');
@@ -12,3 +13,6 @@ $(function () {
   	});
 });
 
+$(document).ready(function(){
+    $("#cargar").click(function(){LoadTrait();});   
+});

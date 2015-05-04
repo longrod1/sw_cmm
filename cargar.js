@@ -10,21 +10,32 @@ function getHttpObject(){
 
 var http = getHttpObject();
 
-function Load(){    
+function LoadTrait(){    
   var modelo = document.getElementById('selectModelo').value;
-  var mostrar = document.getElementById('datos');
+  var mostrar = document.getElementById('listaTrait');
   if(http){
     http.onreadystatechange = function(){
       if(http.readyState==4 && http.status==200){
         mostrar.innerHTML=http.responseText;
       }
     }
-    http.open("GET","cgi-bin/conection.pl?nombre="+nombre+"&codigo="+codigo+"&estado="+estado,true);
+    http.open("GET","cgi-bin/conection.pl?modelo="+modelo,true);
     http.send();
   }
 }
 
-
+function LoadIni(){
+  var mostrar = document.getElementById('selectModelo');
+  if(http){
+    http.onreadystatechange = function(){
+      if(http.readyState==4 && http.status==200){
+        mostrar.innerHTML=http.responseText;
+      }
+    }
+    http.open("GET","cgi-bin/loadIni.pl",true);
+    http.send();
+  }
+}
 function LoadDel(){
   var ver = document.getElementById('datos');
   var codigo = document.getElementById('codigo').value;
@@ -37,8 +48,4 @@ function LoadDel(){
     http.open("GET","cgi-bin/eliminar.pl?codigo="+codigo,true);
     http.send();
   }
-}
-
-function alerta(){
-	alert("hola");
 }

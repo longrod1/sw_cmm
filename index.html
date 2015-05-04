@@ -8,12 +8,13 @@
 	<link href="bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="main.css">
 	
+	<script src="cargar.js"></script>
 	<script src="jquery-1.11.1.min.js"></script>
 	<script src="bootstrap.min.js"></script>
 
 </head>
 
-<body>
+<body onload="LoadIni()" >
 <nav class="navbar navbar-default navbar-static-top">
 <div class="container-fluid">
 	<div class="navbar-header">
@@ -31,12 +32,10 @@
 		<form class="navbar-form navbar-left">
 		<div class="form-group">
 		<select class="form-control" id="selectModelo">
-                    <option value="1">CMMI</option>
-                    <option value="2">ISO9196</option>
                 </select>
 
 		</div>
-		<button type="button" onclick="Load()">Cargar</button>
+		<button type="button" id="cargar" class="btn btn-default">Cargar</button>
 		</form>
 		
 		<ul class="nav navbar-nav navbar-right">
@@ -87,7 +86,7 @@
 	<!-- fin panel de Actividades -->
 	</div>
 	</div>
-
+	<div id="listaMenu"></div>
 	<footer class="pull-left footer">
 	<p class="col-md-12"><hr class="divider">by: Roycer</p>
        	</footer>
