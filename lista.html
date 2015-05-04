@@ -1,0 +1,63 @@
+<!DOCTYPE  html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<script>
+function getHttpObject(){
+  var XMLHttp;
+  if (window.XMLHttpRequest) {
+    XMLHttp = new XMLHttpRequest();
+  } else if (window.ActiveXObject) {
+    XMLHttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  return XMLHttp;
+}
+
+var http = getHttpObject();
+
+function getData(){
+  if(http){
+    var lista = document.getElementById('lista').value;
+    var url="cgi-bin/options.pl?lista="+lista;
+  
+    http.onreadystatechange = function(){ 
+      var combo = document.getElementById('combo');
+      var contenido = document.getElementById('contenido');
+      if(http.readyState == 1){    
+        combo.length = 0;
+        var nuevaOpcion = document.createElement("option");
+        nuevaOpcion.value = 0; 
+        nuevaOpcion.innerHTML="Cargando...";
+        combo.appendChild(nuevaOpcion); 
+        combo.disabled = true;
+      }
+
+      if(http.readyState==4 && http.status == 200){
+        contenido.innerHTML = http.responseText;
+        combo.disabled = false;
+      }
+    }
+
+    http.open("GET",url,true);
+    http.send();
+  }
+}
+
+</script>
+</head>
+<body>
+
+<select name=lista id=lista onChange="getData();">
+  <option value=0>seleccione</option>
+  <option value=lista1>lista1</option>
+  <option value=lista2>lista2</option>
+</select>
+
+<div id="contenido">
+  <select name=combo id=combo>
+    <option value=0>seleccione una lista</option>
+  </select>
+</div>
+
+</body>
+</html>
