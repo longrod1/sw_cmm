@@ -7,7 +7,7 @@ $hostname = 'localhost';
 $port=3306;
 $username='rcondori';
 $password='kzw8x6qr';
-$database='sw_cmm';
+$database='rcondori';
 $dsn = "DBI:mysql:database=$database;host=$hostname;port=$port";
 $dbh = DBI->connect($dsn,$username,$password) or die ("no se puede conectar");
 
