@@ -5,9 +5,9 @@ print "Content-type:text/html \n\n";
 
 $hostname = 'localhost';
 $port=3306;
-$username='root';
-$password='admin123';
-$database='sw_cmm';
+$username='rcondori';
+$password='kzw8x6qr';
+$database='rcondori';
 $dsn = "DBI:mysql:database=$database;host=$hostname;port=$port";
 $dbh = DBI->connect($dsn,$username,$password) or die ("no se puede conectar");
 
