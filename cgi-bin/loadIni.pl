@@ -5,7 +5,7 @@ print "Content-type:text/html \n\n";
 
 $hostname = 'localhost';
 $port=3306;
-$username='administrador';
+$username='root';
 $password='admin123';
 $database='sw_cmm';
 $dsn = "DBI:mysql:database=$database;host=$hostname;port=$port";
