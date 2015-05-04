@@ -26,7 +26,9 @@ $sth->execute();
 
 while(@res = $sth->fetchrow_array()){
 print<<HTML;
-  <option value="@res[0]">@res[1]</option>
+  <select class="form-control" id="selectModelo">
+  	<option value="@res[0]">@res[1]</option>
+  </select>
 HTML
 }
 
