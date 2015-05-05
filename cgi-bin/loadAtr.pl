@@ -19,7 +19,9 @@ $sth->execute($codigoCar);
 while(@res = $sth->fetchrow_array()){
   print<<HTML
     <div class="panel-heading">@res[0] : @res[1]</div>
-    <div class="panel-body">coment </div>
+    <div class="panel-body"> 
+      ingresar<input > </input>
+    </div>
 HTML
 }
 
