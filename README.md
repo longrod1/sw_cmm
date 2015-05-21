@@ -32,3 +32,7 @@ sw_cmm/
 **Zegarra Herrera, Jesus Miguel**
 - 20095940
 - jmzegarrah@gmail.com
+
+**Choquenaira Florez, Alexander Ylnner**
+- 20113638
+- alexanderchf1@gmail.com
